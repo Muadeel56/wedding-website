@@ -18,6 +18,9 @@ export default function Header() {
           <Link to="/story" className="hover:text-primary transition-colors">
             Our Story
           </Link>
+          <Link to="/events" className="hover:text-primary transition-colors">
+            Events
+          </Link>
           <Link to="/contact" className="hover:text-primary transition-colors">
             Contact
           </Link>
