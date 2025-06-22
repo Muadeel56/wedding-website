@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import Gallery from "./pages/Gallery";
-import OurStory from "./pages/OurStory";
-import EventDetails from "./pages/EventDetails";
 import SplashScreen from "./components/SplashScreen";
+
+const Home = lazy(() => import("./pages/Home"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const OurStory = lazy(() => import("./pages/OurStory"));
+const EventDetails = lazy(() => import("./pages/EventDetails"));
 
 function App() {
   const [loading, setLoading] = useState(
@@ -24,13 +25,15 @@ function App() {
 
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/story" element={<OurStory />} />
-        <Route path="/events" element={<EventDetails />} />
-        {/* Add other routes here */}
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/story" element={<OurStory />} />
+          <Route path="/events" element={<EventDetails />} />
+          {/* Add other routes here */}
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }
