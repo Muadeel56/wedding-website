@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import { Sun, Moon } from "lucide-react";
 
@@ -7,19 +8,19 @@ export default function Header() {
   return (
     <header className="bg-background/80 fixed top-0 left-0 right-0 z-50 border-b border-border backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <a href="/" className="text-xl font-bold font-serif">
+        <Link to="/" className="text-xl font-bold font-serif">
           Anb Photography
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a href="/portfolio" className="hover:text-primary transition-colors">
-            Portfolio
-          </a>
-          <a href="/about" className="hover:text-primary transition-colors">
+          <Link to="/gallery" className="hover:text-primary transition-colors">
+            Gallery
+          </Link>
+          <Link to="/about" className="hover:text-primary transition-colors">
             About
-          </a>
-          <a href="/contact" className="hover:text-primary transition-colors">
+          </Link>
+          <Link to="/contact" className="hover:text-primary transition-colors">
             Contact
-          </a>
+          </Link>
         </nav>
         <div className="flex items-center space-x-4">
           <button
