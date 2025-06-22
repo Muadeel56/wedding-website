@@ -1,12 +1,23 @@
+const backgroundVideoUrl = "https://res.cloudinary.com/dgsjdnzyf/video/upload/v1750602159/Waleema_fhlqsw.mp4";
+
 export default function Home() {
   return (
     <div className="flex-grow">
-      <section className="h-screen min-h-[600px] flex items-center justify-center bg-secondary">
-        <div className="container mx-auto px-4 md:px-6 text-center">
+      <section className="h-screen min-h-[700px] relative flex items-center justify-center text-white">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={backgroundVideoUrl}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
+        <div className="container relative z-20 mx-auto px-4 md:px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight font-serif sm:text-5xl md:text-6xl lg:text-7xl">
             Capturing Moments, Creating Art
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted md:text-xl">
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-200 md:text-xl">
             Timeless, editorial wedding and fashion photography that tells your unique story.
           </p>
           <div className="mt-10 flex justify-center gap-x-6">
