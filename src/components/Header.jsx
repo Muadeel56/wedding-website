@@ -15,8 +15,8 @@ export default function Header() {
           <Link to="/gallery" className="hover:text-primary transition-colors">
             Gallery
           </Link>
-          <Link to="/about" className="hover:text-primary transition-colors">
-            About
+          <Link to="/story" className="hover:text-primary transition-colors">
+            Our Story
           </Link>
           <Link to="/contact" className="hover:text-primary transition-colors">
             Contact
