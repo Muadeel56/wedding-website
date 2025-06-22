@@ -3,7 +3,7 @@ import { useTheme } from "../hooks/useTheme";
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -55,16 +55,7 @@ export default function Header() {
       </div>
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-          >
-            <MobileMenu
-              isOpen={isMenuOpen}
-              onLinkClick={() => setIsMenuOpen(false)}
-            />
-          </motion.div>
+          <MobileMenu onLinkClick={() => setIsMenuOpen(false)} />
         )}
       </AnimatePresence>
     </header>
