@@ -1,68 +1,106 @@
+@import "tailwindcss";
+
+/*
+|--------------------------------------------------------------------------
+| Theme Variable Definitions
+|--------------------------------------------------------------------------
+|
+| Here we define the CSS custom properties that will be used to style
+| the website. These are organized by a light theme (default) and
+| a dark theme, which is triggered by the `data-theme="dark"` selector.
+|
+*/
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-background: #ffffff;
+  --color-foreground: #0c0a09;
+  --color-primary: #a16207;
+  --color-primary-foreground: #fafaf9;
+  --color-secondary: #f7f1e3;
+  --color-muted: #78716c;
+  --color-card: #ffffff;
+  --color-border: #e7e5e4;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --font-family-sans: "Inter", sans-serif;
+  --font-family-serif: "Playfair Display", serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --radius: 0.5rem;
+}
+
+[data-theme="dark"] {
+  --color-background: #0c0a09;
+  --color-foreground: #fafaf9;
+  --color-primary: #eab308;
+  --color-primary-foreground: #0c0a09;
+  --color-secondary: #1c1917;
+  --color-muted: #a8a29e;
+  --color-card: #1c1917;
+  --color-border: #292524;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Base Styles & Global Resets
+|--------------------------------------------------------------------------
+|
+| We apply some base styles to the body and headings to ensure our
+| theme's fonts and colors are applied globally.
+|
+*/
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-family-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-serif);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@theme {
+  /*
+  |--------------------------------------------------------------------------
+  | Tailwind Theme Configuration
+  |--------------------------------------------------------------------------
+  |
+  | Here we map our custom properties to Tailwind's theme scale.
+  | This allows us to use standard Tailwind classes like `bg-background`
+  | or `font-serif`, which will automatically adapt to the current theme.
+  |
+  */
+  --color {
+    background: var(--color-background);
+    foreground: var(--color-foreground);
+    primary: {
+      DEFAULT: var(--color-primary);
+      foreground: var(--color-primary-foreground);
+    }
+    secondary: {
+      DEFAULT: var(--color-secondary);
+    }
+    muted: {
+      DEFAULT: var(--color-muted);
+    }
+    card: {
+      DEFAULT: var(--color-card);
+    }
+    border: var(--color-border);
   }
-  a:hover {
-    color: #747bff;
+
+  --font-family {
+    sans: var(--font-family-sans);
+    serif: var(--font-family-serif);
   }
-  button {
-    background-color: #f9f9f9;
+
+  --border-radius {
+    DEFAULT: var(--radius);
+    sm: calc(var(--radius) - 2px);
+    lg: calc(var(--radius) + 4px);
   }
 }
