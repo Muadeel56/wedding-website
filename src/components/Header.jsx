@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
+import { useState } from "react";
+import MobileMenu from "./MobileMenu";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-background/80 fixed top-0 left-0 right-0 z-50 border-b border-border backdrop-blur-sm">
@@ -37,24 +41,32 @@ export default function Header() {
               <Moon className="h-5 w-5 text-primary" />
             )}
           </button>
-          <button className="md:hidden">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+          >
+            <MobileMenu
+              isOpen={isMenuOpen}
+              onLinkClick={() => setIsMenuOpen(false)}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 } 
