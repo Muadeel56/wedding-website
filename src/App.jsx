@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense, lazy } from "react";
+import { useState, Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import SplashScreen from "./components/SplashScreen";
@@ -9,15 +9,7 @@ const OurStory = lazy(() => import("./pages/OurStory"));
 const EventDetails = lazy(() => import("./pages/EventDetails"));
 
 function App() {
-  const [loading, setLoading] = useState(
-    !sessionStorage.getItem("splashScreenViewed")
-  );
-
-  useEffect(() => {
-    if (!loading) {
-      sessionStorage.setItem("splashScreenViewed", "true");
-    }
-  }, [loading]);
+  const [loading, setLoading] = useState(true);
 
   if (loading) {
     return <SplashScreen onFinished={() => setLoading(false)} />;

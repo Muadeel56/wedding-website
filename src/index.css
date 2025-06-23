@@ -103,4 +103,10 @@ h6 {
     sm: calc(var(--radius) - 2px);
     lg: calc(var(--radius) + 4px);
   }
+
+  --backdrop-blur {
+    DEFAULT: 8px;
+    sm: 4px;
+    lg: 16px;
+  }
 }
