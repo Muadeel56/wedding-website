@@ -34,7 +34,7 @@ export default function SplashScreen({ onFinished }) {
           showLogo ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold tracking-tight text-primary drop-shadow-lg">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold tracking-tight text-primary drop-shadow-lg max-w-full text-center px-2 whitespace-normal">
           ANB Photography <span className="text-foreground">&</span> Films
         </h1>
       </div>
