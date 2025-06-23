@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Instagram, Phone, User } from "lucide-react";
 import { motion } from "framer-motion";
+import InstagramFeed from "../components/InstagramFeed";
 
 // Hero slideshow images (replace/add as needed)
 const heroImages = [
@@ -101,7 +102,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Instagram Gallery Section - Masonry grid, hover effects, responsive */}
+      {/* Instagram Gallery Section - now uses InstagramFeed */}
       <motion.section
         id="gallery"
         className="py-20 bg-secondary"
@@ -112,24 +113,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="text-3xl font-bold font-serif text-center mb-12 text-foreground">Latest on Instagram</h2>
-          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {instagramImages.map((img, idx) => (
-              <a
-                key={img}
-                href="https://www.instagram.com/anbphotographyfilms/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group overflow-hidden rounded-2xl shadow-lg bg-background mb-4 hover:shadow-2xl transition-shadow"
-              >
-                <img
-                  src={img}
-                  alt={`Instagram post ${idx + 1}`}
-                  className="w-full mb-0 rounded-2xl object-cover group-hover:scale-105 transition-transform duration-300 aspect-[4/5]"
-                  loading="lazy"
-                />
-              </a>
-            ))}
-          </div>
+          <InstagramFeed />
           <div className="text-center mt-10">
             <a
               href="https://www.instagram.com/anbphotographyfilms/"
