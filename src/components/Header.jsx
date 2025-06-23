@@ -13,26 +13,26 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-background/80 fixed top-0 left-0 right-0 z-50 border-b border-border backdrop-blur-sm">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link to="/" className="text-lg md:text-xl font-bold font-serif">
+    <header className="bg-background/80 fixed top-0 left-0 right-0 z-50 border-b border-border backdrop-blur-sm shadow-sm">
+      <div className="container mx-auto flex flex-wrap items-center justify-between h-16 px-2 sm:px-4 md:px-6 gap-y-2">
+        <Link to="/" className="text-base xs:text-lg md:text-xl font-bold font-serif truncate min-w-0 max-w-[50vw] sm:max-w-xs">
           Anb Photography
         </Link>
-        <nav className="flex items-center space-x-4 md:space-x-6 text-sm font-medium">
+        <nav className="flex-1 flex items-center justify-center min-w-0 overflow-x-auto scrollbar-none space-x-2 sm:space-x-4 md:space-x-6 text-sm font-medium">
           {links.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors px-2 py-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-primary whitespace-nowrap"
             >
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center space-x-2 md:space-x-4">
+        <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-4">
           <button
             onClick={toggleTheme}
-            className="rounded-full p-2 hover:bg-secondary transition-colors"
+            className="rounded-full p-2 hover:bg-secondary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
