@@ -4,16 +4,14 @@ import { motion } from "framer-motion";
 import InstagramFeed from "../components/InstagramFeed";
 import Logo from "../components/Logo";
 
-// Hero slideshow images (replace/add as needed)
+// Hero slideshow images (specific images from urls.txt)
 const heroImages = [
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223725/ANB06184-Enhanced-NR_cq7ppu.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223725/ANB_0995-Enhanced-NR_vxeulm.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223719/ANB03159-Enhanced-NR_tpdkmn.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223717/ANB06203-Enhanced-NR_-_Copy_kvca1g.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223704/ANB01828-Enhanced-NR_otqyb5.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223701/ANB_5777-Enhanced-NR_vy1pcl.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223698/ANB01845-Enhanced-NR_tbchcx.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223696/ANB09327_copy_ahg9xl.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223714/ANB_6184_ya9brx.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223702/ANB_6038_qv9j38.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223701/ANB_1418_odiy5f.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223699/ANB_5981_ppimzi.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223690/ANB_3315_umez8c.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223690/ANB_9007_mm810g.jpg",
 ];
 
 // Instagram gallery images (replace with real data/API)
