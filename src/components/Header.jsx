@@ -4,6 +4,7 @@ import { Sun, Moon, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { createPortal } from "react-dom";
+import Logo from "./Logo";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -88,8 +89,8 @@ export default function Header() {
   return (
     <header className="bg-background/80 fixed top-0 left-0 right-0 z-50 border-b border-border backdrop-blur-sm shadow-sm">
       <div className="container mx-auto flex flex-wrap items-center justify-between h-16 px-2 sm:px-4 md:px-6 gap-y-2">
-        <Link to="/" className="text-base xs:text-lg md:text-xl font-bold font-serif truncate min-w-0 max-w-[50vw] sm:max-w-xs">
-          Anb Photography
+        <Link to="/" className="min-w-0 max-w-[50vw] sm:max-w-xs flex items-center">
+          <Logo size={48} />
         </Link>
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-1 items-center justify-center min-w-0 space-x-2 sm:space-x-4 md:space-x-6 text-sm font-medium">

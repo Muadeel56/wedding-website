@@ -42,7 +42,7 @@ export default function InstagramFeed() {
     }, 800);
   }, []);
 
-  if (loading) return <div className="text-center text-muted py-8">Loading Instagram feed...</div>;
+  if (loading) return <div className="text-center text-muted py-8 transition-colors duration-500">Loading Instagram feed...</div>;
   if (error) return <div className="text-center text-red-500 py-8">Failed to load Instagram feed.</div>;
 
   return (
@@ -53,7 +53,8 @@ export default function InstagramFeed() {
           href={post.permalink}
           target="_blank"
           rel="noopener noreferrer"
-          className="block group overflow-hidden rounded-2xl shadow-lg bg-background mb-4 hover:shadow-2xl transition-shadow"
+          className="block group overflow-hidden rounded-2xl shadow-lg bg-card border border-border mb-4 hover:shadow-2xl transition-shadow transition-colors duration-500 focus:outline-none focus:ring-2 focus:ring-primary"
+          tabIndex={0}
         >
           <img
             src={post.media_url}

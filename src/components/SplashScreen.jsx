@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Logo from "./Logo";
 
 const videoUrl = "https://res.cloudinary.com/dgsjdnzyf/video/upload/v1750602159/Waleema_fhlqsw.mp4";
 
@@ -35,7 +36,7 @@ export default function SplashScreen({ onFinished }) {
         }`}
       >
         <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold tracking-tight text-primary drop-shadow-lg max-w-full text-center px-2 whitespace-normal">
-          ANB Photography <span className="text-foreground">&</span> Films
+          <Logo size={160} className="mx-auto mb-4" />
         </h1>
       </div>
       {/* Video background and button - fade in after logo */}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Instagram, Phone, User } from "lucide-react";
 import { motion } from "framer-motion";
 import InstagramFeed from "../components/InstagramFeed";
+import Logo from "../components/Logo";
 
 // Hero slideshow images (replace/add as needed)
 const heroImages = [
@@ -41,10 +42,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex-grow">
+    <div className="flex-grow bg-background text-foreground transition-colors duration-500">
       {/* Hero Section with Slideshow */}
       <motion.section
-        className="relative flex flex-col items-center justify-center min-h-[70vh] py-20 bg-background overflow-hidden"
+        className="relative flex flex-col items-center justify-center min-h-[70vh] py-20 bg-background overflow-hidden transition-colors duration-500"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -64,62 +65,68 @@ export default function Home() {
             />
           ))}
           {/* Stronger overlay for readability, theme-aware */}
-          <div className="absolute inset-0 bg-black/70 dark:bg-black/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/70" style={{backgroundColor: 'var(--color-background)', opacity: 0.7, mixBlendMode: 'multiply', transition: 'background-color 0.5s'}} />
         </div>
         <div className="container mx-auto px-4 md:px-8 text-center z-10 relative">
-          <h1 className="text-4xl font-bold tracking-tight font-serif sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight text-foreground drop-shadow-xl">
-            ANB Photography <span className="text-primary">&</span> Films
-          </h1>
-          <p className="text-lg md:text-2xl text-foreground font-serif mb-3 drop-shadow">
-            Timeless Wedding & Fashion Photography
-          </p>
-          <p className="max-w-xl mx-auto text-base md:text-lg text-foreground mb-10 drop-shadow">
-            📍 Pakistan | Worldwide<br />
-            Booking & Inquiries: WhatsApp: <a href="https://wa.me/923333333333" className="text-primary underline">+92 333 3333333</a>
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+          <div className="hero-blur-bg mx-auto max-w-2xl px-6 py-8">
+            <h1 className="text-4xl font-bold tracking-tight font-serif sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight text-foreground drop-shadow-xl transition-colors duration-500">
+              <Logo size={120} className="mx-auto mb-4" />
+            </h1>
+            <p className="text-lg md:text-2xl text-foreground font-serif mb-3 drop-shadow transition-colors duration-500">
+              Timeless Wedding & Fashion Photography
+            </p>
+            <p className="max-w-xl mx-auto text-base md:text-lg text-foreground mb-10 drop-shadow transition-colors duration-500">
+              📍 Pakistan | Worldwide<br />
+              Booking & Inquiries: WhatsApp: <a href="https://wa.me/923333333333" className="text-primary underline focus:outline-none focus:ring-2 focus:ring-primary-foreground rounded transition-colors duration-300">+92 333 3333333</a>
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+              <a
+                href="#gallery"
+                className="rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary-foreground transition-colors duration-300"
+                tabIndex={0}
+              >
+                View Portfolio
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-primary px-8 py-3 text-base font-semibold text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300"
+                tabIndex={0}
+              >
+                Contact Us
+              </a>
+            </div>
             <a
-              href="#gallery"
-              className="rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors"
+              href="https://www.instagram.com/anbphotographyfilms/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary hover:underline mt-2 focus:outline-none focus:ring-2 focus:ring-primary-foreground rounded transition-colors duration-300"
+              tabIndex={0}
             >
-              View Portfolio
-            </a>
-            <a
-              href="#contact"
-              className="rounded-full border border-primary px-8 py-3 text-base font-semibold text-primary hover:bg-primary/10 transition-colors"
-            >
-              Contact Us
+              <Instagram className="w-5 h-5" /> Follow us on Instagram
             </a>
           </div>
-          <a
-            href="https://www.instagram.com/anbphotographyfilms/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary hover:underline mt-2"
-          >
-            <Instagram className="w-5 h-5" /> Follow us on Instagram
-          </a>
         </div>
       </motion.section>
 
       {/* Instagram Gallery Section - now uses InstagramFeed */}
       <motion.section
         id="gallery"
-        className="py-20 bg-secondary"
+        className="py-20 bg-secondary transition-colors duration-500"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 1 }}
       >
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="text-3xl font-bold font-serif text-center mb-12 text-foreground">Latest on Instagram</h2>
+          <h2 className="text-3xl font-bold font-serif text-center mb-12 text-foreground transition-colors duration-500">Latest on Instagram</h2>
           <InstagramFeed />
           <div className="text-center mt-10">
             <a
               href="https://www.instagram.com/anbphotographyfilms/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:underline text-lg"
+              className="inline-flex items-center gap-2 text-primary hover:underline text-lg focus:outline-none focus:ring-2 focus:ring-primary-foreground rounded transition-colors duration-300"
+              tabIndex={0}
             >
               <Instagram className="w-5 h-5" /> See more on Instagram
             </a>
@@ -129,29 +136,30 @@ export default function Home() {
 
       {/* About Section - Card style, responsive, more spacing, no logo/profile image */}
       <motion.section
-        className="py-20 bg-background border-t border-border"
+        className="py-20 bg-background border-t border-border transition-colors duration-500"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 1 }}
       >
         <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
-          <div className="w-full max-w-2xl mx-auto bg-card/90 dark:bg-card/80 rounded-2xl shadow-lg p-8 md:p-12 text-center">
-            <h3 className="text-3xl font-bold font-serif mb-4 flex items-center justify-center gap-2 text-foreground">
+          <div className="w-full max-w-2xl mx-auto bg-card/90 rounded-2xl shadow-lg p-8 md:p-12 text-center transition-colors duration-500 border border-border">
+            <h3 className="text-3xl font-bold font-serif mb-4 flex items-center justify-center gap-2 text-foreground transition-colors duration-500">
               <User className="w-7 h-7 text-primary" /> About Us
             </h3>
-            <p className="text-lg md:text-xl text-muted mb-6">
+            <p className="text-lg md:text-xl text-muted mb-6 transition-colors duration-500">
               ANB Photography & Films is dedicated to capturing timeless wedding and fashion moments with an editorial, cinematic style. Based in Pakistan, available worldwide. We turn your memories into art.
             </p>
             <div className="flex flex-wrap gap-2 justify-center mb-4">
-              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Weddings</span>
-              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Fashion</span>
-              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Editorial</span>
-              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Events</span>
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium transition-colors duration-500">Weddings</span>
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium transition-colors duration-500">Fashion</span>
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium transition-colors duration-500">Editorial</span>
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium transition-colors duration-500">Events</span>
             </div>
             <a
               href="#contact"
-              className="inline-block mt-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+              className="inline-block mt-2 rounded-full bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary-foreground transition-colors duration-300"
+              tabIndex={0}
             >
               Get in Touch
             </a>
@@ -162,16 +170,16 @@ export default function Home() {
       {/* Contact Section - Card style, icons, large buttons, more spacing, theme-aware */}
       <motion.section
         id="contact"
-        className="py-20 bg-secondary border-t border-border"
+        className="py-20 bg-secondary border-t border-border transition-colors duration-500"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 1 }}
       >
         <div className="container mx-auto px-4 md:px-8 flex flex-col items-center">
-          <div className="w-full max-w-xl bg-card/90 dark:bg-card/80 rounded-2xl shadow-xl p-8 md:p-12 text-center">
-            <h3 className="text-3xl font-bold font-serif mb-5 text-foreground">Contact Us</h3>
-            <p className="text-lg md:text-xl text-muted mb-8">
+          <div className="w-full max-w-xl bg-card/90 rounded-2xl shadow-xl p-8 md:p-12 text-center border border-border transition-colors duration-500">
+            <h3 className="text-3xl font-bold font-serif mb-5 text-foreground transition-colors duration-500">Contact Us</h3>
+            <p className="text-lg md:text-xl text-muted mb-8 transition-colors duration-500">
               For bookings and inquiries, reach out via WhatsApp or Instagram DM.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
@@ -179,7 +187,8 @@ export default function Home() {
                 href="https://wa.me/923333333333"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-lg font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors"
+                className="flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-lg font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary-foreground transition-colors duration-300"
+                tabIndex={0}
               >
                 <Phone className="w-5 h-5" /> WhatsApp
               </a>
@@ -187,7 +196,8 @@ export default function Home() {
                 href="https://www.instagram.com/anbphotographyfilms/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-full border border-primary px-8 py-3 text-lg font-semibold text-primary hover:bg-primary/10 transition-colors"
+                className="flex items-center justify-center gap-2 rounded-full border border-primary px-8 py-3 text-lg font-semibold text-primary hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300"
+                tabIndex={0}
               >
                 <Instagram className="w-5 h-5" /> Instagram DM
               </a>
