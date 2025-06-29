@@ -9,8 +9,10 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <Logo size={40} />
           <p className="text-sm text-muted">
-            &copy; {currentYear} Anb Photography & Films. All rights reserved.<br />
-            <a href="mailto:anbstudio77@gmail.com" className="text-primary underline">anbstudio77@gmail.com</a>
+            &copy; {currentYear} anbphotographyfilms. All rights reserved.<br />
+            📍 Rawalpindi/Islamabad | Est. 2020<br />
+            <a href="mailto:anbstudio77@gmail.com" className="text-primary underline">anbstudio77@gmail.com</a> | 
+            <a href="https://wa.me/923041851531" className="text-primary underline ml-1">0304 1851531</a>
           </p>
         </div>
         <div className="flex items-center space-x-4">
@@ -21,22 +23,6 @@ export default function Footer() {
             className="text-muted hover:text-primary transition-colors"
           >
             Instagram
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted hover:text-primary transition-colors"
-          >
-            Facebook
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted hover:text-primary transition-colors"
-          >
-            YouTube
           </a>
         </div>
       </div>

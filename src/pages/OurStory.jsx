@@ -1,27 +1,27 @@
 const storyData = [
   {
-    year: "2018",
-    title: "The Spark of Passion",
+    year: "2020",
+    title: "The Beginning",
     description:
-      "Our journey began with a single, second-hand camera and an insatiable curiosity for capturing the beauty in everyday moments. We spent countless hours learning, experimenting, and discovering our unique visual style.",
+      "anbphotographyfilms was established with a vision to capture life's most precious moments. Starting in Rawalpindi/Islamabad, we began our journey with a passion for storytelling through the lens.",
   },
   {
-    year: "2020",
-    title: "Anb Photography Was Born",
+    year: "2021",
+    title: "Building Our Craft",
     description:
-      "After years of honing our craft, we officially launched Anb Photography & Films. Our mission was clear: to offer timeless, editorial-style photography that tells a genuine story, moving beyond clichés to capture authentic emotions.",
+      "We dedicated ourselves to honing our skills in both photography and videography, developing our signature style that combines creativity with technical excellence. Our focus on weddings, families, fashion, and corporate projects began to take shape.",
   },
   {
     year: "2022",
-    title: "First Destination Wedding",
+    title: "Expanding Horizons",
     description:
-      "Our work took us abroad for the first time, capturing a beautiful ceremony against a stunning international backdrop. This experience solidified our love for travel and storytelling, shaping our signature destination wedding services.",
+      "As our reputation grew, we started capturing more diverse projects including cinematic music videos and fashion shoots. Our commitment to creating visual masterpieces that tell unique stories became our hallmark.",
   },
   {
     year: "Today",
-    title: "Crafting Stories Worldwide",
+    title: "Where Every Frame Tells a Story",
     description:
-      "With hundreds of events captured and a growing team of passionate creatives, we continue to tell stories for clients around the globe. We are committed to artistic excellence and creating heirlooms that will be cherished for generations.",
+      "Since 2020, anbphotographyfilms has been dedicated to preserving memories that matter. With a passion for storytelling, we combine creativity and technical skill to deliver beautiful, timeless images and films that reflect your unique journey.",
   },
 ];
 
