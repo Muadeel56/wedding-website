@@ -77,7 +77,8 @@ export default function Home() {
             </p>
             <p className="max-w-xl mx-auto text-base md:text-lg text-foreground mb-10 drop-shadow transition-colors duration-500">
               📍 Pakistan | Worldwide<br />
-              Booking & Inquiries: WhatsApp: <a href="https://wa.me/923333333333" className="text-primary underline focus:outline-none focus:ring-2 focus:ring-primary-foreground rounded transition-colors duration-300">+92 333 3333333</a>
+              Booking & Inquiries: WhatsApp: <a href="https://wa.me/923333333333" className="text-primary underline focus:outline-none focus:ring-2 focus:ring-primary-foreground rounded transition-colors duration-300">+92 333 3333333</a><br />
+              Email: <a href="mailto:anbstudio77@gmail.com" className="text-primary underline">anbstudio77@gmail.com</a>
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
               <a
@@ -180,7 +181,8 @@ export default function Home() {
           <div className="w-full max-w-xl bg-card/90 rounded-2xl shadow-xl p-8 md:p-12 text-center border border-border transition-colors duration-500">
             <h3 className="text-3xl font-bold font-serif mb-5 text-foreground transition-colors duration-500">Contact Us</h3>
             <p className="text-lg md:text-xl text-muted mb-8 transition-colors duration-500">
-              For bookings and inquiries, reach out via WhatsApp or Instagram DM.
+              For bookings and inquiries, reach out via WhatsApp, Instagram DM, or email:<br />
+              <a href="mailto:anbstudio77@gmail.com" className="text-primary underline">anbstudio77@gmail.com</a>
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
               <a

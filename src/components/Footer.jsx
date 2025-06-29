@@ -9,7 +9,8 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <Logo size={40} />
           <p className="text-sm text-muted">
-            &copy; {currentYear} Anb Photography & Films. All rights reserved.
+            &copy; {currentYear} Anb Photography & Films. All rights reserved.<br />
+            <a href="mailto:anbstudio77@gmail.com" className="text-primary underline">anbstudio77@gmail.com</a>
           </p>
         </div>
         <div className="flex items-center space-x-4">
