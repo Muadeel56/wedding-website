@@ -4,23 +4,43 @@ import { useEffect, useState } from "react";
 const MOCK_POSTS = [
   {
     id: "1",
-    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1750594669/ANB06184-Enhanced-NR_m4ontq.jpg",
-    permalink: "https://www.instagram.com/p/POST1/",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223725/ANB06184-Enhanced-NR_cq7ppu.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
   },
   {
     id: "2",
-    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1750594668/ANB09657_wcmt0c.jpg",
-    permalink: "https://www.instagram.com/p/POST2/",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223725/ANB_0995-Enhanced-NR_vxeulm.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
   },
   {
     id: "3",
-    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1750594668/ANB09107_zf0ntw.jpg",
-    permalink: "https://www.instagram.com/p/POST3/",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223719/ANB03159-Enhanced-NR_tpdkmn.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
   },
   {
     id: "4",
-    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1750594668/ANB07919_copy_dwf91a.jpg",
-    permalink: "https://www.instagram.com/p/POST4/",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223717/ANB06203-Enhanced-NR_-_Copy_kvca1g.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
+  },
+  {
+    id: "5",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223704/ANB01828-Enhanced-NR_otqyb5.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
+  },
+  {
+    id: "6",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223701/ANB_5777-Enhanced-NR_vy1pcl.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
+  },
+  {
+    id: "7",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223698/ANB01845-Enhanced-NR_tbchcx.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
+  },
+  {
+    id: "8",
+    media_url: "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223696/ANB09327_copy_ahg9xl.jpg",
+    permalink: "https://www.instagram.com/anbphotographyfilms/",
   },
 ];
 
