@@ -74,9 +74,6 @@ export default function Home() {
             <h1 className="text-4xl font-bold tracking-tight font-serif sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight text-foreground drop-shadow-xl transition-colors duration-500">
               <Logo size={120} className="mx-auto mb-4" />
             </h1>
-            <p className="text-lg md:text-2xl text-foreground font-serif mb-3 drop-shadow transition-colors duration-500">
-              Where every frame tells a story.
-            </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
               <a
                 href="#gallery"
