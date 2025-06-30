@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
 // Specific images from urls.txt for splash screen
@@ -19,8 +20,8 @@ export default function SplashScreen({ onFinished }) {
 
   useEffect(() => {
     // Show logo for 1.2s, then fade out and fade in images/button
-    const logoTimer = setTimeout(() => setShowLogo(false), 1200);
-    const imagesTimer = setTimeout(() => setShowImages(true), 1800);
+    const logoTimer = setTimeout(() => setShowLogo(false), 1500);
+    const imagesTimer = setTimeout(() => setShowImages(true), 2000);
     return () => {
       clearTimeout(logoTimer);
       clearTimeout(imagesTimer);
@@ -31,7 +32,7 @@ export default function SplashScreen({ onFinished }) {
     if (showImages) {
       const interval = setInterval(() => {
         setCurrentImage((prev) => (prev + 1) % splashImages.length);
-      }, 2000); // Change image every 2 seconds
+      }, 4500); // Change image every 4.5 seconds
       return () => clearInterval(interval);
     }
   }, [showImages]);
@@ -48,15 +49,27 @@ export default function SplashScreen({ onFinished }) {
       }`}
     >
       {/* Studio Logo/Name - fade out before images */}
-      <div
-        className={`absolute inset-0 flex items-center justify-center bg-background transition-opacity duration-700 z-30 ${
-          showLogo ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
-      >
-        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold tracking-tight text-primary drop-shadow-lg max-w-full text-center px-2 whitespace-normal">
-          <Logo size={160} className="mx-auto mb-4" />
-        </h1>
-      </div>
+      <AnimatePresence>
+        {showLogo && (
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center bg-background z-30"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold tracking-tight text-primary drop-shadow-lg max-w-full text-center px-2 whitespace-normal">
+              <motion.div
+                initial={{ scale: 0.7, opacity: 0 }}
+                animate={{ scale: 1.1, opacity: 1 }}
+                transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+              >
+                <Logo size={160} className="mx-auto mb-4" />
+              </motion.div>
+            </h1>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Image background and button - fade in after logo */}
       <div
         className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 z-20 ${
