@@ -7,6 +7,8 @@ const Home = lazy(() => import("./pages/Home"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const OurStory = lazy(() => import("./pages/OurStory"));
 const EventDetails = lazy(() => import("./pages/EventDetails"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -23,6 +25,8 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/story" element={<OurStory />} />
           <Route path="/events" element={<EventDetails />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           {/* Add other routes here */}
         </Routes>
       </Suspense>

@@ -12,6 +12,7 @@ export default function Header() {
 
   const links = [
     { to: "/gallery", label: "Gallery" },
+    { to: "/about", label: "About" },
     { to: "/story", label: "Our Story" },
     { to: "/events", label: "Events" },
     { to: "/contact", label: "Contact" },
