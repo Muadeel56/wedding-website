@@ -58,22 +58,22 @@ export default function About() {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
       {/* Hero Section */}
       <motion.section
-        className="relative py-20 overflow-hidden"
+        className="relative section-padding overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="container-enhanced relative z-10">
           <motion.div
             className="text-center max-w-4xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants} className="mb-6">
-              <Sparkles className="w-16 h-16 mx-auto text-primary mb-4" />
-              <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <motion.div variants={itemVariants} className="mb-8">
+              <Sparkles className="w-16 h-16 mx-auto text-primary mb-6" />
+              <h1 className="text-5xl md:text-7xl font-bold font-serif mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 About Us
               </h1>
             </motion.div>
@@ -97,13 +97,13 @@ export default function About() {
 
       {/* Stats Section */}
       <motion.section
-        className="py-16 bg-card/50 border-y border-border"
+        className="section-padding-sm bg-card/50 border-y border-border"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="container-enhanced">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
@@ -128,19 +128,19 @@ export default function About() {
 
       {/* Services Section */}
       <motion.section
-        className="py-20"
+        className="section-padding"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="container-enhanced">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6">Our Services</h2>
             <p className="text-xl text-muted max-w-2xl mx-auto">
@@ -156,10 +156,10 @@ export default function About() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 whileHover={{ y: -10 }}
               >
-                <div className="bg-card rounded-2xl p-8 h-full border border-border shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:border-primary/50">
+                <div className="card rounded-2xl p-8 h-full group-hover:border-primary/50">
                   <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                     {service.icon}
                   </div>
@@ -174,19 +174,19 @@ export default function About() {
 
       {/* Mission Section */}
       <motion.section
-        className="py-20 bg-secondary/30"
+        className="section-padding bg-secondary/30"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="container-enhanced">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <Heart className="w-16 h-16 mx-auto text-primary mb-8" />
               <h2 className="text-4xl md:text-5xl font-bold font-serif mb-8">Our Mission</h2>
@@ -196,13 +196,13 @@ export default function About() {
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300"
+                  className="btn btn-primary focus-ring inline-flex items-center gap-2"
                 >
                   Get in Touch
                 </a>
                 <a
                   href="/gallery"
-                  className="inline-flex items-center gap-2 border border-primary text-primary px-8 py-3 rounded-full font-semibold hover:bg-primary/10 transition-colors duration-300"
+                  className="btn btn-secondary focus-ring inline-flex items-center gap-2"
                 >
                   View Portfolio
                 </a>

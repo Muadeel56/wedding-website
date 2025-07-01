@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 // MOCK: Replace this with real API fetch logic
 const MOCK_POSTS = [
@@ -62,27 +63,63 @@ export default function InstagramFeed() {
     }, 800);
   }, []);
 
-  if (loading) return <div className="text-center text-muted py-8 transition-colors duration-500">Loading Instagram feed...</div>;
-  if (error) return <div className="text-center text-red-500 py-8">Failed to load Instagram feed.</div>;
+  if (loading) {
+    return (
+      <div className="text-center py-12">
+        <div className="loading-skeleton w-16 h-16 rounded-full mx-auto mb-4"></div>
+        <div className="loading-skeleton w-48 h-4 rounded mx-auto mb-2"></div>
+        <div className="loading-skeleton w-32 h-4 rounded mx-auto"></div>
+      </div>
+    );
+  }
+  
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <div className="text-red-500 text-lg mb-2">Failed to load Instagram feed</div>
+        <div className="text-muted">Please try again later</div>
+      </div>
+    );
+  }
 
   return (
-    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-      {posts.map((post) => (
-        <a
+    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
+      {posts.map((post, index) => (
+        <motion.a
           key={post.id}
           href={post.permalink}
           target="_blank"
           rel="noopener noreferrer"
-          className="block group overflow-hidden rounded-2xl shadow-lg bg-card border border-border mb-4 hover:shadow-2xl transition-shadow transition-colors duration-500 focus:outline-none focus:ring-2 focus:ring-primary"
+          className="block group focus-ring rounded-xl overflow-hidden"
           tabIndex={0}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ 
+            duration: 0.6, 
+            delay: index * 0.1,
+            ease: "easeOut"
+          }}
+          whileHover={{ 
+            scale: 1.02,
+            transition: { duration: 0.2 }
+          }}
         >
-          <img
-            src={post.media_url}
-            alt="Instagram post"
-            className="w-full mb-0 rounded-2xl object-cover group-hover:scale-105 transition-transform duration-300 aspect-[4/5]"
-            loading="lazy"
-          />
-        </a>
+          <div className="card overflow-hidden">
+            <div className="img-hover relative">
+              <img
+                src={post.media_url}
+                alt="Instagram post"
+                className="img-cover aspect-[4/5]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-medium">
+                  View on Instagram
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.a>
       ))}
     </div>
   );

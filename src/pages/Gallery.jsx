@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { motion } from "framer-motion";
 
 const images = [
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223725/ANB06184-Enhanced-NR_cq7ppu.jpg",
@@ -29,11 +30,11 @@ const images = [
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223707/ANB_3276_copy_mqytiq.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223706/ANB_7724_kaavsk.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223706/ANB_5856-2_ulir1g.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223706/ANB08661_copy_kqkd0j.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223706/ANB08661_copy_kqkd0g.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223705/ANB_4150_copy_qd0cim.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223705/ANB_0377_xi3fje.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223705/ANB_5809---8_utyjml.jpg",
-  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223705/ANB02054_gx0n1b.jpg",
+  "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223705/ANB02054_gx0n1j.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223704/ANB_8207_koe7vy.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223704/ANB01828-Enhanced-NR_otqyb5.jpg",
   "https://res.cloudinary.com/dgsjdnzyf/image/upload/v1751223703/ANB_6831_copy_kdenig.jpg",
@@ -103,23 +104,50 @@ export default function Gallery() {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-12 font-serif">Our Gallery</h1>
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+      <div className="container-enhanced section-padding">
+        <motion.h1 
+          className="text-5xl md:text-6xl font-bold text-center mb-16 font-serif"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          Our Gallery
+        </motion.h1>
+        
+        <motion.div 
+          className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
           {images.map((image, idx) => (
-            <div
+            <motion.div
               key={image.src}
-              className="break-inside-avoid cursor-pointer"
+              className="break-inside-avoid cursor-pointer group"
               onClick={() => setIndex(idx)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: idx * 0.05 }}
+              whileHover={{ scale: 1.02 }}
             >
-              <img
-                src={image.src}
-                alt={`Gallery image ${idx + 1}`}
-                className="w-full h-auto rounded-lg shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105"
-              />
-            </div>
+              <div className="card overflow-hidden">
+                <div className="img-hover">
+                  <img
+                    src={image.src}
+                    alt={`Gallery image ${idx + 1}`}
+                    className="img-cover rounded-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded-lg flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-lg font-medium">
+                    View
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <Lightbox
@@ -127,6 +155,17 @@ export default function Gallery() {
         index={index}
         close={() => setIndex(-1)}
         slides={images}
+        carousel={{
+          finite: true,
+        }}
+        controller={{
+          closeOnBackdropClick: true,
+        }}
+        styles={{
+          container: {
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+          },
+        }}
       />
     </>
   );
