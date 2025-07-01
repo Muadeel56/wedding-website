@@ -1,3 +1,5 @@
+import { Mail, Phone, Instagram, Camera, Video, Users, Palette } from "lucide-react";
+
 const storyData = [
   {
     year: "2020",
@@ -27,32 +29,22 @@ const storyData = [
 
 export default function OurStory() {
   return (
-    <div className="bg-secondary py-16 sm:py-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight font-serif sm:text-5xl">Our Story</h2>
-          <p className="mt-6 text-lg leading-8 text-muted">
-            From a shared passion to a celebrated craft, this is the journey behind our lens.
+    <div className="bg-secondary min-h-screen py-16 sm:py-24 flex items-center justify-center">
+      <div className="container mx-auto px-4 md:px-8 max-w-3xl">
+        <div className="bg-card/90 rounded-2xl shadow-lg border border-border p-8 md:p-14 text-center flex flex-col items-center">
+          <h1 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-primary">Our Story</h1>
+          <p className="text-xl md:text-2xl font-serif text-foreground mb-8">Where every frame tells a story.</p>
+          <p className="text-lg md:text-xl text-muted mb-6 leading-relaxed">
+            Founded in 2020 in Rawalpindi/Islamabad, anbphotographyfilms was born from a passion for storytelling and a desire to preserve life's most meaningful moments. What started as a dream has grown into a creative studio trusted by couples, families, and brands across Pakistan.
           </p>
-        </div>
-
-        <div className="mt-16 flow-root">
-          <div className="-m-8">
-            {storyData.map((item, index) => (
-              <div key={item.year} className="p-8">
-                <div className="flex items-start space-x-8">
-                  <div className="flex-shrink-0">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-background border border-border shadow-sm">
-                      <p className="text-primary font-bold">{item.year}</p>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-serif font-semibold">{item.title}</h3>
-                    <p className="mt-2 text-base text-muted">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <p className="text-lg md:text-xl text-muted mb-6 leading-relaxed">
+            We believe every story is unique. Our team combines creativity, technical skill, and a love for visual storytelling to turn your memories into timeless masterpieces—whether it's a wedding, a family portrait, a fashion shoot, or a corporate event.
+          </p>
+          <p className="text-lg md:text-xl text-muted mb-6 leading-relaxed">
+            Our mission is to create striking visuals that reflect your journey with passion and authenticity. Let us capture your story through our lens—we'd love to be part of your most meaningful moments.
+          </p>
+          <div className="mt-8 text-base text-muted font-medium">
+            📍 Based in Rawalpindi/Islamabad &nbsp;|&nbsp; Est. 2020
           </div>
         </div>
       </div>
